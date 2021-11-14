@@ -27,12 +27,13 @@ const resetBtn = document.getElementById("reset");
 
 function playRound(playerSelection, computerSelection) {
 
-    document.getElementById("player-choice").innerHTML = "Player choose " + playerSelection;
-    document.getElementById("computer-choice").innerHTML = "Computer choose " + computerSelection;
+    document.getElementById("player-choice").innerHTML = "Player chose " + playerSelection;
+    
+    document.getElementById("computer-choice").innerHTML = "Computer chose " + computerSelection;
 
     if (playerSelection === computerSelection){
     draw++;
-    document.getElementById("game-result").innerHTML ="Both choose " + playerSelection + ". It's a tie.";
+    document.getElementById("game-result").innerHTML ="Both chose " + playerSelection + ". It's a tie.";
     console.log("draw");
     }
 
