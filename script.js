@@ -1,7 +1,11 @@
 
+// initializing vars to keep track of score
+
 let playerScore = 0;
 let computerScore = 0;
 let draw = 0;
+let currentRound = 0;
+
 
 // randomly selects and returns rock / paper / scissor
 function computerSelection() {
@@ -10,31 +14,34 @@ function computerSelection() {
 
     return computerRandomChoices[getRandomChoices];
     
-}
+};
+ 
 
-
-// connecting nodes to constant
+// button nodes to constants
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissor');
 const resetBtn = document.getElementById("reset");
 
 
-
-
 // evaluates winner based on computer selection and player selection 
-// -> displays either "computer wins", "user wins", or "tie" into #game-result
+// -> displays either "computer wins", "user wins", or "tie" into #game-result 
+// and adjusts the scoreboard accordingly
 
 function playRound(playerSelection, computerSelection) {
 
-    document.getElementById("player-choice").innerHTML = "Player chose " + playerSelection;
+    currentRound ++;
+
+    document.getElementById("current-round").innerHTML = currentRound;
+
+    document.getElementById("player-choice").innerHTML = playerSelection;
     
-    document.getElementById("computer-choice").innerHTML = "Computer chose " + computerSelection;
+    document.getElementById("computer-choice").innerHTML = computerSelection;
 
     if (playerSelection === computerSelection){
     draw++;
     document.getElementById("game-result").innerHTML ="Both chose " + playerSelection + ". It's a tie.";
-    console.log("draw");
+    document.getElementById("draws").innerHTML = draw;
     }
 
 
@@ -80,6 +87,9 @@ function playRound(playerSelection, computerSelection) {
         
 }
 
+
+// displays winner after five rounds
+
 function game(playerChoice) {
 
 let player = playerChoice; 
@@ -87,16 +97,16 @@ let computer = computerSelection();
 
 playRound(player, computer);
 
+document.getElementById("winner").innerHTML = ""
 if (playerScore === 5) {
     document.getElementById("winner").innerHTML = "Player won 5 rounds";
 } else if (computerScore === 5) {
     document.getElementById("winner").innerHTML = "Computer won 5 rounds";
 }
-document.getElementById("player-score").innerHTML = "Player Score: " + playerScore;
-document.getElementById("computer-score").innerHTML = "Computer Score: " + computerScore;
+document.getElementById("player-score").innerHTML = playerScore;
+document.getElementById("computer-score").innerHTML = computerScore;
 
 };
-
 
 
 // calls the game function
@@ -113,6 +123,7 @@ scissors.addEventListener('click', () => {
 resetBtn.addEventListener('click', function () {
     location.reload();
 });
+
 
 
 

@@ -1,30 +1,86 @@
+
+
 body {
     background-color: antiquewhite;
+    font-family: sans-serif;
+    box-sizing: border-box;
+
+}
+
+h1 {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.wrapper {
+    display: flex;
+    max-width: 1250px;
+    margin: 0 auto;
+    gap: 15px;
+    height: 600px;
+}
+
+.instructions {
+    max-width: 400px;
+    background-color: #14213d;
+    padding: 30px;
+    color: white;
+    border-radius: 10px;
+}
+
+.instructions h3 {
+    font-size: 1.5rem;
+}
+
+.tile-child {
+    background-color: #fca311;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.scoreboard {
+    flex-grow: 1;
+    margin: 0;
+}
+
+.controls-wrapper {
+flex-grow: 1;
+display: flex;
+flex-direction: column;
+gap: 15px;
+color: #14213d;
+border-radius: 10px;
 
 }
 
 .button-container {
-
-display: flex;
-gap: 20px;
-justify-content: center;
-margin-top: 10vh;
-
-
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    height: 160px;
 }
 
 .button-container button {
     width: 100px;
     height: 100px;
-
 }
 
-.info-container {
-
-text-align: center;
-}
-
-#winner {
+.scoreboard .heading  {
+    font-size: 1.5rem;
     text-align: center;
-    margin-top: 100px;
 }
+
+
+.currentRound, .result {
+ flex-grow: 1;
+}
+
+.round-wrapper {
+    display: flex;
+}
+
+.current-round {
+    width: 50%;
+}
+

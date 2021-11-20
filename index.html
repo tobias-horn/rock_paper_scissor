@@ -10,22 +10,58 @@
 </head>
 <body>
 
-<h2 id="winner"></h2>
+    <h1>Rock Paper Scissor</h1>
 
-<div class="button-container">
-<button id="rock">Rock</button>
-<button id="paper">Paper</button>
-<button id="scissor">Scissor</button>
-<button id="reset">Reset</button>
+<div class="wrapper">
+    <div class="instructions">
 
+        <h3><b>How to play:</b></h3>
+        <p>Choose one of the following:</p>
+        <ul>
+            <li>Rock beats scissor</li>
+            <li>Paper beats rock</li>
+            <li>Scissor beats paper</li>
+        </ul>
+        <p>The computer will choose randomly on its own <br><br>
+        The first player to win five rounds wins the game!</p>
 
+    </div>        
+
+    <div class="controls-wrapper">
+
+            <div class="tile-child">
+
+                <div class="button-container">
+                    <button id="rock">Rock</button>
+                    <button id="paper">Paper</button>
+                    <button id="scissor">Scissor</button>
+                    <button id="reset">Reset</button>
+                </div>
+
+            </div>
+
+        <div class="tile-child scoreboard">
+
+            <h4 class="heading">Scoreboard</h4>
+           
+            <div class="round-wrapper">
+                <div class="current-round">
+                    <h4>Round: <span id="current-round">1</span></h4>
+                    <h4>Player chose <span class="score-display" id="player-choice"></span></h4>
+                    <h4>Computer chose <span class="score-display" id="computer-choice"></span></h4>
+                    <h4 id="game-result"></h4>
+                </div>
+            
+                <div class="result">
+                    <p>Player score:  <span id="player-score"></span></p>
+                    <p>Computer score: <span id="computer-score"></span></p>
+                    <p>Draws: <span id="draws"></span></p>
+                    <h2 id="winner"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="info-container">
-<h4 id="player-choice"></h4>
-<h4 id="computer-choice"></h4>
-<h4 id="game-result"></h4>
-<p id="player-score"></p>
-<p id="computer-score"></p>
-</div>
+
 </body>
 </html>
